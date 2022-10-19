@@ -26,5 +26,5 @@ temp = (str(current_temp))
 temp_rain = str(chances_rain)
 
 #Exibindo na tela
-result = "Current  temperature: " + temp[82:84] + "ºC in Brasília" + "\n" +  "Current weather: " + temp_rain[75:-7]
+result = "Current temperature: " + temp[82:84] + "ºC in Brasília" + "\n" +  "Current weather: " + temp_rain[75:-7]
 n.show_toast("Weather update", result, duration=8)
