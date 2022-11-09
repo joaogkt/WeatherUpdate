@@ -18,13 +18,18 @@ print(soup.prettify())
 
 #Filtrando os dados necessarios
 current_temp = soup.find_all("span",
-                             class_="CurrentConditions--tempValue--3a50n")
-chances_rain = soup.find_all("div",
-                             class_="CurrentConditions--phraseValue--2Z18W")
+                             class_="CurrentConditions--tempValue--MHmYY") #MHmYY de vez em quando muda, apenas execute o codigo e substitua pela sequencia de caracteres mais recentes
+clima = soup.find_all("div",
+                             class_="CurrentConditions--phraseValue--mZC_p") #mZC_p de vez em quando muda, apenas execute o codigo e substitua pela sequencia de caracteres mais recentes
+
+day = soup.find_all("div",
+                    class_="CurrentConditions--tempHiLoValue--3T1DG") #3T1DG de vez em quando muda, apenas execute o codigo e substitua pela sequencia de caracteres mais recentes
+
 #Transformando em String
 temp = (str(current_temp))
-temp_rain = str(chances_rain)
+temp_clima = str(clima)
+tem_day = str(day)
 
 #Exibindo na tela
-result = "Current temperature: " + temp[82:84] + "ºC in Brasília" + "\n" +  "Current weather: " + temp_rain[75:-7]
-n.show_toast("Weather update", result, duration=8)
+result = "Current temperature: " + temp[82:84] + "ºC in Brasília" + "\n" +  "Current weather: " + temp_clima[75:-7] + "\n" + "Day: " + tem_day[103: 105] + "ºC     Night: " + tem_day[191:193] + 'ºC'
+n.show_toast("Weather update", result, duration=10)
