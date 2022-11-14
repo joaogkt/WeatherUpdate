@@ -18,12 +18,12 @@ print(soup.prettify())
 
 #Filtrando os dados necessarios
 current_temp = soup.find_all("span",
-                             class_="CurrentConditions--tempValue--MHmYY") #MHmYY de vez em quando muda, apenas execute o codigo e substitua pela sequencia de caracteres mais recentes
+                             class_="CurrentConditions--tempValue--MHmYY")
 clima = soup.find_all("div",
-                             class_="CurrentConditions--phraseValue--mZC_p") #mZC_p de vez em quando muda, apenas execute o codigo e substitua pela sequencia de caracteres mais recentes
+                             class_="CurrentConditions--phraseValue--mZC_p")
 
 day = soup.find_all("div",
-                    class_="CurrentConditions--tempHiLoValue--3T1DG") #3T1DG de vez em quando muda, apenas execute o codigo e substitua pela sequencia de caracteres mais recentes
+                    class_="CurrentConditions--tempHiLoValue--3T1DG")
 
 #Transformando em String
 temp = (str(current_temp))
